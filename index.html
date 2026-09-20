@@ -1,258 +1,875 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>S.K.L Public School</title>
+<title>S.K.L Public School | School Management System</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+    color:#222;
+}
+
+
+/* HEADER */
+
+header{
+    background:#063b8f;
+    color:white;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 12px rgba(0,0,0,.2);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo span{
+    display:block;
+    font-size:12px;
+    font-weight:normal;
+    margin-top:4px;
+}
+
+nav{
+    display:flex;
+    gap:24px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffd43b;
+}
+
+
+/* HERO */
+
+.hero{
+    min-height:570px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:80px 20px;
+
+    background:
+    linear-gradient(
+        rgba(0,59,143,.90),
+        rgba(0,59,143,.90)
+    ),
+    url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:56px;
+    margin-bottom:15px;
+}
+
+.hero h2{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:19px;
+    line-height:1.8;
+}
+
+.hero-buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    margin:6px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+    background:white;
+    color:#063b8f;
+}
+
+.btn:hover{
+    background:#ffd43b;
+    color:#111;
+}
+
+
+/* LOGIN */
+
+.login{
+    padding:70px 6%;
+    text-align:center;
+}
+
+.section-title{
+    color:#063b8f;
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.section-text{
+    color:#666;
+    margin-bottom:40px;
+}
+
+.login-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.login-card{
+    background:white;
+    padding:35px 20px;
+    border-radius:14px;
+    box-shadow:0 4px 15px #ddd;
+    transition:.3s;
+}
+
+.login-card:hover{
+    transform:translateY(-8px);
+}
+
+.icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.login-card h3{
+    color:#063b8f;
+    margin-bottom:12px;
+}
+
+.login-card p{
+    color:#666;
+    line-height:1.6;
+    min-height:70px;
+}
+
+.login-btn{
+    display:block;
+    margin-top:20px;
+    padding:12px;
+    background:#063b8f;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+.login-btn:hover{
+    background:#00265f;
+}
+
+
+/* ABOUT */
+
+.about{
+    background:white;
+    padding:70px 10%;
+    text-align:center;
+}
+
+.about p{
+    max-width:900px;
+    margin:20px auto 0;
+    color:#555;
+    font-size:17px;
+    line-height:1.9;
+}
+
+
+/* FEATURES */
+
+.features{
+    padding:70px 6%;
+    text-align:center;
+}
+
+.feature-grid{
+    max-width:1050px;
+    margin:40px auto 0;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.feature-card{
+    background:white;
+    padding:30px 20px;
+    border-radius:12px;
+    box-shadow:0 4px 12px #ddd;
+}
+
+.feature-card .icon{
+    font-size:42px;
+}
+
+.feature-card h3{
+    color:#063b8f;
+    margin:10px 0;
+}
+
+.feature-card p{
+    color:#666;
+    line-height:1.6;
+}
+
+
+/* CONTACT */
+
+.contact{
+    padding:70px 6%;
+    background:#eef4ff;
+    text-align:center;
+}
+
+.contact-grid{
+    max-width:1100px;
+    margin:40px auto 0;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.contact-card{
+    background:white;
+    padding:28px 15px;
+    border-radius:12px;
+    box-shadow:0 3px 10px #ddd;
+}
+
+.contact-card .icon{
+    font-size:38px;
+}
+
+.contact-card h3{
+    color:#063b8f;
+    margin-bottom:12px;
+}
+
+.contact-card p{
+    color:#555;
+    line-height:1.7;
+}
+
+.map-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 16px;
+    background:#063b8f;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+}
+
+footer h2{
+    margin-bottom:15px;
+}
+
+footer p{
+    margin:7px;
+    color:#ddd;
+}
+
+
+/* MOBILE */
+
+@media(max-width:1000px){
+
+    .login-grid,
+    .contact-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .feature-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero h2{
+        font-size:23px;
+    }
+
+    .login-grid,
+    .feature-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title{
+        font-size:29px;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-<!-- HEADER START -->
+
+<!-- HEADER -->
 
 <header>
 
 <div class="logo">
 
-<img src="images/logo.png" alt="School Logo">
+🏫 S.K.L Public School
 
-<div>
-
-<h1>S.K.L Public School</h1>
-
-<p>Knowledge • Discipline • Success</p>
+<span>
+School Management System
+</span>
 
 </div>
 
-</div>
 
 <nav>
 
-<ul>
+<a href="#home">Home</a>
 
-<li><a href="index.html">Home</a></li>
+<a href="#portal">Portal</a>
 
-<li><a href="about.html">About</a></li>
+<a href="#about">About</a>
 
-<li><a href="academics.html">Academics</a></li>
+<a href="#features">Features</a>
 
-<li><a href="admission.html">Admission</a></li>
-
-<li><a href="gallery.html">Gallery</a></li>
-
-<li><a href="notice.html">Notice</a></li>
-
-<li><a href="teacher.html">Teacher</a></li>
-
-<li><a href="student.html">Student</a></li>
-
-<li><a href="admin.html">Admin</a></li>
-
-<li><a href="contact.html">Contact</a></li>
-
-</ul>
+<a href="#contact">Contact</a>
 
 </nav>
 
 </header>
 
-<!-- HEADER END -->
 
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 
-<section class="hero">
+<section class="hero" id="home">
 
-<div class="hero-text">
+<div class="hero-content">
 
-<h2>Welcome to S.K.L Public School</h2>
+<h1>S.K.L Public School</h1>
+
+<h2>Welcome to Our School</h2>
 
 <p>
-
-Established in 2000, S.K.L Public School provides quality education from Nursery to Senior Classes with discipline, values and modern learning.
-
+Education • Discipline • Knowledge • Success
 </p>
 
-<a href="admission.html" class="btn">
+<p>
+Providing quality education and developing
+confident, responsible and successful students.
+</p>
 
-Admission Open 2026-27
 
+<div class="hero-buttons">
+
+<a href="#portal" class="btn">
+School Portal
+</a>
+
+<a href="#contact" class="btn">
+Contact School
 </a>
 
 </div>
 
-<div class="hero-image">
+</div>
 
-<img src="images/banner.jpg" alt="School">
+</section>
+
+
+
+<!-- LOGIN PORTAL -->
+
+<section class="login" id="portal">
+
+<h2 class="section-title">
+School Management Portal
+</h2>
+
+<p class="section-text">
+Select your portal to continue
+</p>
+
+
+<div class="login-grid">
+
+
+<!-- STUDENT -->
+
+<div class="login-card">
+
+<div class="icon">
+👨‍🎓
+</div>
+
+<h3>Student</h3>
+
+<p>
+View homework, attendance,
+results and other academic information.
+</p>
+
+<a
+href="student-login.php"
+class="login-btn"
+>
+Student Login
+</a>
+
+</div>
+
+
+
+<!-- TEACHER -->
+
+<div class="login-card">
+
+<div class="icon">
+👨‍🏫
+</div>
+
+<h3>Teacher</h3>
+
+<p>
+Manage attendance, homework,
+classes, subjects and results.
+</p>
+
+<a
+href="teacher-login.php"
+class="login-btn"
+>
+Teacher Login
+</a>
+
+</div>
+
+
+
+<!-- PRINCIPAL -->
+
+<div class="login-card">
+
+<div class="icon">
+👨‍💼
+</div>
+
+<h3>Principal</h3>
+
+<p>
+Manage teachers, students,
+results, notices and school activities.
+</p>
+
+<a
+href="principal-login.php"
+class="login-btn"
+>
+Principal Login
+</a>
+
+</div>
+
+
+
+<!-- ADMIN -->
+
+<div class="login-card">
+
+<div class="icon">
+🔐
+</div>
+
+<h3>Administrator</h3>
+
+<p>
+Manage the complete school
+management system and administration.
+</p>
+
+<a
+href="admin-login.php"
+class="login-btn"
+>
+Admin Login
+</a>
+
+</div>
+
 
 </div>
 
 </section>
 
-<!-- SCHOOL INFO -->
 
-<section class="info">
 
-<h2>School Information</h2>
+<!-- ABOUT -->
 
-<div class="info-box">
+<section class="about" id="about">
 
-<p><strong>School Name :</strong> S.K.L Public School</p>
-
-<p><strong>Established :</strong> 2000</p>
-
-<p><strong>UDISE Code :</strong> 09270506504</p>
+<h2 class="section-title">
+About S.K.L Public School
+</h2>
 
 <p>
 
-<strong>Address :</strong>
+S.K.L Public School is committed to providing
+quality education in a safe, disciplined and
+supportive environment.
 
-Udvat Khera,
+Our aim is to develop students academically,
+socially and personally while encouraging
+discipline, confidence, creativity and responsibility.
 
-Khujauli,
-
-Mohanlal Ganj,
-
-Lucknow,
-
-Uttar Pradesh - 226301
+We believe that education is the foundation
+of a successful and meaningful future.
 
 </p>
 
+</section>
+
+
+
+<!-- FEATURES -->
+
+<section class="features" id="features">
+
+<h2 class="section-title">
+School Management System
+</h2>
+
+<p class="section-text">
+A digital platform for students, teachers and school administration
+</p>
+
+
+<div class="feature-grid">
+
+
+<div class="feature-card">
+
+<div class="icon">
+📅
+</div>
+
+<h3>
+Attendance Management
+</h3>
+
 <p>
+Teachers can manage student attendance
+and students can view their attendance records.
+</p>
 
-<strong>Contact :</strong>
+</div>
 
-9005495660,
 
+
+<div class="feature-card">
+
+<div class="icon">
+📚
+</div>
+
+<h3>
+Homework Management
+</h3>
+
+<p>
+Teachers can upload homework and
+students can access their assignments.
+</p>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<div class="icon">
+📊
+</div>
+
+<h3>
+Result Management
+</h3>
+
+<p>
+Students can view examination results
+and academic performance.
+</p>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<div class="icon">
+📢
+</div>
+
+<h3>
+Notice Board
+</h3>
+
+<p>
+Important school notices and announcements
+can be shared digitally.
+</p>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<div class="icon">
+💰
+</div>
+
+<h3>
+Fee Management
+</h3>
+
+<p>
+School fee information can be managed
+through the school management system.
+</p>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<div class="icon">
+👨‍🏫
+</div>
+
+<h3>
+Teacher Management
+</h3>
+
+<p>
+School administration can manage teachers,
+classes and subject assignments.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">
+Contact S.K.L Public School
+</h2>
+
+<p class="section-text">
+We are always happy to hear from you.
+</p>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+<div class="icon">
+📱
+</div>
+
+<h3>
+Phone
+</h3>
+
+<p>
+9005495660
+</p>
+
+<p>
 7355205844
-
 </p>
 
+</div>
+
+
+
+<div class="contact-card">
+
+<div class="icon">
+✉️
+</div>
+
+<h3>
+Email
+</h3>
+
 <p>
+sklpublicschool1@gmail.com
+</p>
 
-<strong>Location :</strong>
+</div>
 
-P26F+43C,
 
-Lucknow,
 
-Khujauli,
+<div class="contact-card">
 
+<div class="icon">
+🏫
+</div>
+
+<h3>
+School Address
+</h3>
+
+<p>
+Udvat Khera,<br>
+Mohanlal Ganj,<br>
+Lucknow,<br>
 Uttar Pradesh
-
 </p>
 
 </div>
 
-</section>
 
-<!-- STATISTICS -->
 
-<section class="stats">
+<div class="contact-card">
 
-<div class="card">
-
-<h2></h2>
-
-<p>Students</p>
-
+<div class="icon">
+📍
 </div>
 
-<div class="card">
-
-<h2></h2>
-
-<p>Teachers</p>
-
-</div>
-
-<div class="card">
-
-<h2>26+</h2>
-
-<p>Years of Excellence</p>
-
-</div>
-
-<div class="card">
-
-<h2>100%</h2>
-
-<p>Board Result</p>
-
-</div>
-
-</section>
-
-<!-- PRINCIPAL MESSAGE -->
-
-<section class="principal">
-
-<h2>Principal's Message</h2>
+<h3>
+School Location
+</h3>
 
 <p>
-
-Welcome to S.K.L Public School.
-
-We believe every child has unique talent.
-
-Our aim is to provide quality education along with discipline, confidence, honesty and moral values.
-
-Together we prepare students for a bright future.
-
+Udvat Khera,<br>
+Mohanlal Ganj,<br>
+Lucknow
 </p>
 
+<a
+href="https://maps.app.goo.gl/HYriDhSrCq9YqYgM9"
+target="_blank"
+class="map-btn"
+>
+View Location
+</a>
+
+</div>
+
+
+</div>
+
 </section>
+
+
 
 <!-- FOOTER -->
 
 <footer>
 
+<h2>
+S.K.L Public School
+</h2>
+
 <p>
-
-© 2026 S.K.L Public School
-
+📱 9005495660 | 7355205844
 </p>
 
 <p>
-
-UDISE Code : 09270506504
-
+✉️ sklpublicschool1@gmail.com
 </p>
 
 <p>
-
-Udvat Khera, Khujauli,
-
-Mohanlal Ganj,
-
-Lucknow,
-
-Uttar Pradesh - 226301
-
+📍 Udvat Khera, Mohanlal Ganj, Lucknow, Uttar Pradesh
 </p>
 
 <p>
-
-Mobile :
-
-9005495660
-
-|
-
-7355205844
-
+© 2026 S.K.L Public School. All Rights Reserved.
 </p>
 
 </footer>
 
-<script src="script.js"></script>
 
 </body>
 
