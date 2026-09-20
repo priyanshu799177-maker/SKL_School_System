@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Login | S.K.L Public School</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<img src="images/logo.png" alt="School Logo">
+
+<div>
+
+<h1>S.K.L Public School</h1>
+
+<p>Administrator Login</p>
+
+</div>
+
+</div>
+
+</header>
+
+<section>
+
+<h2>Admin Login</h2>
+
+<form id="adminForm">
+
+<label>Admin ID</label>
+
+<input
+type="text"
+id="adminId"
+placeholder="Enter Admin ID"
+required>
+
+<label>Password</label>
+
+<input
+type="password"
+id="adminPassword"
+placeholder="Enter Password"
+required>
+
+<button type="submit">Login</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>© <span id="year"></span> S.K.L Public School</p>
+
+</footer>
+
+<script>
+
+document.getElementById("adminForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let id=document.getElementById("adminId").value;
+
+let pass=document.getElementById("adminPassword").value;
+
+if(id==="Priyanshu123" && pass==="Priyanshu@123"){
+
+window.location.href="admin-dashboard.html";
+
+}else{
+
+alert("Invalid Admin ID or Password");
+
+}
+
+});
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login | S.K.L Public School</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<img src="images/logo.png" alt="Logo">
+
+<div>
+
+<h1>S.K.L Public School</h1>
+
+<p>Student Login</p>
+
+</div>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="admission.html">Admission</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="notice.html">Notice</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section>
+
+<h2>Student Login</h2>
+
+<form id="studentForm">
+
+<label>Student ID</label>
+
+<input type="text" id="studentId" required>
+
+<label>Password</label>
+
+<input type="password" id="studentPassword" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>© <span id="year"></span> S.K.L Public School</p>
+
+</footer>
+
+<script>
+
+document.getElementById("studentForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let id=document.getElementById("studentId").value;
+
+let pass=document.getElementById("studentPassword").value;
+
+if(id==="student123" && pass==="Student@123"){
+
+window.location.href="student-dashboard.html";
+
+}else{
+
+alert("Invalid Student ID or Password");
+
+}
+
+});
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

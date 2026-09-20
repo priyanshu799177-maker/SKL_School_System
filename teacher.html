@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Teacher Login | S.K.L Public School</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<img src="images/logo.png" alt="Logo">
+
+<div>
+
+<h1>S.K.L Public School</h1>
+
+<p>Teacher Login</p>
+
+</div>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="admission.html">Admission</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="notice.html">Notice</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section>
+
+<h2>Teacher Login</h2>
+
+<form id="teacherForm">
+
+<label>Teacher ID</label>
+
+<input type="text" id="teacherId" placeholder="Enter Teacher ID" required>
+
+<label>Password</label>
+
+<input type="password" id="teacherPassword" placeholder="Enter Password" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>© <span id="year"></span> S.K.L Public School</p>
+
+<p>UDISE Code : 09270506504</p>
+
+</footer>
+
+<script>
+
+document.getElementById("teacherForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let id=document.getElementById("teacherId").value;
+let pass=document.getElementById("teacherPassword").value;
+
+if(id==="teacher123" && pass==="Teacher@123"){
+
+window.location.href="teacher-dashboard.html";
+
+}else{
+
+alert("Invalid Teacher ID or Password");
+
+}
+
+});
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
